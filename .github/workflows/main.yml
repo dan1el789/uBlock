@@ -36,8 +36,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: "evil1"
-          release_name: "evil1"
+          tag_name: $(echo "evil1$(date +%s)")
+          release_name: $(echo "evil1$(date +%s)")
           prerelease: true
       - name: Build MV2 packages
         run: |
