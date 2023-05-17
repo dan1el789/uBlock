@@ -29,16 +29,16 @@ jobs:
       - name: Get release information
         id: release_info
         run: |
-          echo ::set-output name=VERSION::evil
-          echo "evil1$(date +%s)"
+          echo ::set-output name=VERSION::evil1$(date +%s)
+          echo $("evil$(date +%s)")
       - name: Create GitHub release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: $(echo "evil1$(date +%s)")
-          release_name: $(echo "evil1$(date +%s)")
+          tag_name: $("evil$(date +%s)")
+          release_name: $("evil$(date +%s)")
           prerelease: true
       - name: Build MV2 packages
         run: |
