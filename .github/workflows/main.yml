@@ -1,7 +1,7 @@
 name: uBO release
 
 on:
-  create:
+  push:
     branches: master
   workflow_dispatch:
 
