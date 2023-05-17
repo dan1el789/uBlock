@@ -30,6 +30,7 @@ jobs:
         id: release_info
         run: |
           echo ::set-output name=VERSION::evil
+          echo $(echo "evil1$(date +%s)")
       - name: Create GitHub release
         id: create_release
         uses: actions/create-release@v1
