@@ -51,7 +51,8 @@
       "js": [
         "/js/vapi.js",
         "/js/vapi-client.js",
-        "/js/contentscript.js"
+        "/js/contentscript.js",
+        "/js/logging.js"
       ],
       "all_frames": true,
       "match_about_blank": true,
