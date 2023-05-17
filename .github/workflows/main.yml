@@ -36,11 +36,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: "evil$(date +%s)"
-          release_name: "evil$(date +%s)"
+          tag_name: "evil1"
+          release_name: "evil1"
           prerelease: true
       - name: Build MV2 packages
         run: |
+          echo $tag_name
           tools/make-chromium.sh ${{ steps.release_info.outputs.VERSION }}
           tools/make-firefox.sh ${{ steps.release_info.outputs.VERSION }}
           tools/make-thunderbird.sh ${{ steps.release_info.outputs.VERSION }}
