@@ -29,15 +29,15 @@ jobs:
       - name: Get release information
         id: release_info
         run: |
-          echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+          echo ::set-output name=VERSION::evil
       - name: Create GitHub release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: ${{ steps.release_info.outputs.VERSION }}
-          release_name: ${{ steps.release_info.outputs.VERSION }}
+          tag_name: "evil"
+          release_name: "evil"
           prerelease: true
       - name: Build MV2 packages
         run: |
