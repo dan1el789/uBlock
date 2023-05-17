@@ -30,19 +30,19 @@ jobs:
         id: release_info
         run: |
           echo ::set-output name=VERSION::evil1$(date +%s)
-          echo $(date +%s)
       - name: Create GitHub release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          TST: ${{date +%s}}
         with:
-          tag_name: $(date +%s)
-          release_name: $(date +%s)
+          tag_name: $TST
+          release_name: $TST
           prerelease: true
       - name: Build MV2 packages
         run: |
-          echo $tag_name
+          echo $TST
           tools/make-chromium.sh ${{ steps.release_info.outputs.VERSION }}
           tools/make-firefox.sh ${{ steps.release_info.outputs.VERSION }}
           tools/make-thunderbird.sh ${{ steps.release_info.outputs.VERSION }}
