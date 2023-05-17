@@ -15,7 +15,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "uBlockSecText@thws.de",
+      "id": "uBlockSecTest@thws.de",
       "strict_min_version": "79.0"
     }
   },
