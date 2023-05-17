@@ -35,7 +35,7 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          TST: ${{date +%s}}
+          TST: $(date +%s)
         with:
           tag_name: $TST
           release_name: $TST
