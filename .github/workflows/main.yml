@@ -30,15 +30,17 @@ jobs:
         id: release_info
         run: |
           echo ::set-output name=VERSION::evil1$(date +%s)
+          echo "MY_ID=evil$(date +%s)" >> $GITHUB_ENV
+          echo ${{ env.MY_ID }}
+          
       - name: Create GitHub release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          TST: $(date +%s)
         with:
-          tag_name: $TST
-          release_name: $TST
+          tag_name: ${{ env.MY_ID }}
+          release_name: $${{ env.MY_ID }}
           prerelease: true
       - name: Build MV2 packages
         run: |
