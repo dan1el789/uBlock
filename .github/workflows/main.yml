@@ -36,8 +36,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: ("evil" + ${GITHUB_REF#refs/heads/})
-          release_name: ("evil" + =${GITHUB_REF#refs/heads/})
+          tag_name: ("evil" + ${{ github.sha }})
+          release_name: ("evil" + ${{ github.sha }})
           prerelease: true
       - name: Build MV2 packages
         run: |
