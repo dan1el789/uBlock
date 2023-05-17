@@ -1,5 +1,5 @@
 {
-  "author": "Raymond Hill & contributors",
+  "author": "THWS forked from Raymond Hill & contributors",
   "background": {
     "page": "background.html"
   },
@@ -15,7 +15,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "uBlock0@raymondhill.net",
+      "id": "uBlockSecText@thws.de",
       "strict_min_version": "79.0"
     }
   },
